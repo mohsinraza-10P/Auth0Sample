@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Threading.Tasks;
 using Auth0Sample.Services;
 using Xamarin.Forms;
 

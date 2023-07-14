@@ -43,7 +43,7 @@ namespace Auth0Sample.Droid
         {
             base.OnNewIntent(intent);
 
-            Auth0.OidcClient.ActivityMediator.Instance.Send(intent.DataString);
+            ActivityMediator.Instance.Send(intent.DataString);
         }
     }
 }
