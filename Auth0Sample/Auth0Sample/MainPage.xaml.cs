@@ -1,27 +1,41 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Threading.Tasks;
+using Auth0Sample.Services;
 using Xamarin.Forms;
 
 namespace Auth0Sample
 {
     public partial class MainPage : ContentPage
     {
-        private readonly AuthService authService;
+        private readonly IAuthService authService;
 
         public MainPage()
         {
             InitializeComponent();
 
-            authService = new AuthService();
+            BtnLogin.Clicked += BtnLogin_Clicked;
+            BtnLogout.Clicked += BtnLogout_Clicked;
+
+            authService = DependencyService.Get<IAuthService>();
         }
 
-        public async Task Login_ClickedAsync(System.Object sender, System.EventArgs e)
+        private async void BtnLogin_Clicked(object sender, System.EventArgs e)
         {
-            await authService.SignIn();
+            var result = await authService.Login();
+            if (result?.IsError ?? true)
+            {
+                Debug.WriteLine($"Login Error: {result.Error} - {result.ErrorDescription}");
+                return;
+            }
+
+            Debug.WriteLine($"ID_TOKEN: {result.IdentityToken}");
+            Debug.WriteLine($"ACCESS_TOKEN: {result.AccessToken}");
+            Debug.WriteLine($"REFRESH_TOKEN: {result.RefreshToken}");
         }
 
-        public async Task Logout_Clicked(System.Object sender, System.EventArgs e)
+        private async void BtnLogout_Clicked(object sender, System.EventArgs e)
         {
-            await authService.SignOut();
+            await authService.Logout();
         }
     }
 }

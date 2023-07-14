@@ -20,17 +20,17 @@
             </Label.FormattedText>
         </Label>
         <Button
+            x:Name="BtnLogin"
             Text="LOGIN"
-            BackgroundColor="LightBlue"
-            TextColor="DarkBlue"
-            Margin="25"
-            Clicked="Login_Clicked"/>
-        <Button
-            Text="LOGOUT"
             BackgroundColor="LightGreen"
             TextColor="DarkGreen"
-            Margin="25"
-            Clicked="Logout_Clicked"/>
+            Margin="25"/>
+        <Button
+            x:Name="BtnLogout"
+            Text="LOGOUT"
+            BackgroundColor="LightBlue"
+            TextColor="DarkRed"
+            Margin="25"/>
     </StackLayout>
 
 </ContentPage>
