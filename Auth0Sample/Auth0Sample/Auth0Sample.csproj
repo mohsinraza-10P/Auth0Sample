@@ -14,5 +14,14 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Auth0.OidcClient.Core" Version="3.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Services\" />
+    <None Remove="Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 </Project>

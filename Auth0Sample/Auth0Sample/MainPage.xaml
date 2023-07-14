@@ -24,7 +24,13 @@
             BackgroundColor="LightBlue"
             TextColor="DarkBlue"
             Margin="25"
-            Clicked="Button_Clicked"/>
+            Clicked="Login_Clicked"/>
+        <Button
+            Text="LOGOUT"
+            BackgroundColor="LightGreen"
+            TextColor="DarkGreen"
+            Margin="25"
+            Clicked="Logout_Clicked"/>
     </StackLayout>
 
 </ContentPage>

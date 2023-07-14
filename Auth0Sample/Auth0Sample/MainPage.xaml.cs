@@ -1,24 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Auth0Sample
 {
     public partial class MainPage : ContentPage
     {
-        
+        private readonly AuthService authService;
 
         public MainPage()
         {
             InitializeComponent();
+
+            authService = new AuthService();
         }
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
+        public async Task Login_ClickedAsync(System.Object sender, System.EventArgs e)
         {
+            await authService.SignIn();
+        }
+
+        public async Task Logout_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await authService.SignOut();
         }
     }
 }

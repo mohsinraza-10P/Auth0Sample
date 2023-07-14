@@ -34,5 +34,18 @@
 	<string>Auth0Sample</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>Auth0</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.tenpearls.auth0sample</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
