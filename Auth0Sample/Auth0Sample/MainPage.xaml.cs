@@ -34,7 +34,11 @@ namespace Auth0Sample
 
         private async void BtnLogout_Clicked(object sender, System.EventArgs e)
         {
-            await authService.Logout();
+            var result = await authService.Logout();
+            if (result)
+            {
+                Debug.WriteLine($"Logout successful!");
+            }
         }
     }
 }

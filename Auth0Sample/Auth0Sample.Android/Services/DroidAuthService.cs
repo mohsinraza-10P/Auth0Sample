@@ -33,7 +33,6 @@ namespace Auth0Sample.Droid.Services
                 {
                     audience = Constants.Audience,
                     responseType = Constants.ResponseType,
-                    scope = Constants.Scope
                 };
 
                 return client.LoginAsync(options);
