@@ -5,6 +5,7 @@ using Auth0.OidcClient;
 using Auth0Sample.iOS.Services;
 using Auth0Sample.Services;
 using IdentityModel.OidcClient;
+using IdentityModel.OidcClient.Browser;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(IOSAuthService))]
@@ -21,7 +22,8 @@ namespace Auth0Sample.iOS.Services
                 Domain = Constants.Auth0Domain,
                 ClientId = Constants.Auth0ClientId,
                 Scope = Constants.Scope,
-                LoadProfile = Constants.LoadProfile
+                LoadProfile = Constants.LoadProfile,
+                Browser = new IOSInAppBrowser(),
             });
         }
 
