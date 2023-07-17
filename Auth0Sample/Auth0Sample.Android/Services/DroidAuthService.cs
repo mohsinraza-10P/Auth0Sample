@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Android.Content;
 using Auth0.OidcClient;
 using Auth0Sample.Droid.Services;
 using Auth0Sample.Services;
@@ -12,16 +13,19 @@ namespace Auth0Sample.Droid.Services
 {
     public class DroidAuthService : IAuthService
     {
+        private readonly Context context;
         private readonly Auth0Client client;
 
         public DroidAuthService()
         {
+            context = Android.App.Application.Context;
             client = new Auth0Client(new Auth0ClientOptions()
             {
                 Domain = Constants.Auth0Domain,
                 ClientId = Constants.Auth0ClientId,
                 Scope = Constants.Scope,
-                LoadProfile = Constants.LoadProfile
+                LoadProfile = Constants.LoadProfile,
+                Browser = new DriodInAppBrowser(context),
             });
         }
 
