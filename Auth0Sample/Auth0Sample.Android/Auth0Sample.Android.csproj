@@ -42,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
@@ -57,10 +58,10 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Auth0.OidcClient.AndroidX">
-      <Version>3.3.0</Version>
+      <Version>3.4.1</Version>
     </PackageReference>
     <PackageReference Include="IdentityModel.OidcClient">
-      <Version>5.1.0</Version>
+      <Version>5.2.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +101,9 @@
       <Project>{FEDD68C4-8BFD-4EAA-B664-0735A299F4B3}</Project>
       <Name>Auth0Sample</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LinkDescription Include="linker.config" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -23,7 +23,13 @@ namespace Auth0Sample.iOS.Services
                 ClientId = Constants.Auth0ClientId,
                 Scope = Constants.Scope,
                 LoadProfile = Constants.LoadProfile,
-                Browser = new IOSInAppBrowser(),
+                //Browser = new IOSInAppBrowser(),
+                //Browser = new ASWebAuthenticationSessionBrowser(
+                //    new ASWebAuthenticationSessionOptions
+                //    {
+                //        PrefersEphemeralWebBrowserSession = true
+                //    }
+                //)
             });
         }
 

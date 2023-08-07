@@ -25,7 +25,7 @@ namespace Auth0Sample.Droid.Services
                 ClientId = Constants.Auth0ClientId,
                 Scope = Constants.Scope,
                 LoadProfile = Constants.LoadProfile,
-                Browser = new DriodInAppBrowser(context),
+                //Browser = new DriodInAppBrowser(context),
             });
         }
 
